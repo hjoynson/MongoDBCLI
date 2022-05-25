@@ -4,7 +4,7 @@ const { MongoClient } =  require("mongodb")
 
 const client = new MongoClient(process.env.MONGO_URL);
 
-exports.connection = async () => {
+const connection = async () => {
     try {
         await client.connect();
 
@@ -19,9 +19,10 @@ exports.connection = async () => {
         }
     };
 
-
 //exporting an object that contains both of them
 
 //importing both items, client and connection
 
     // module.exports = {client, connection};
+
+module.exports = {client, connection};
